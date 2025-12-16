@@ -15,7 +15,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")  # Render передаст переме
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://all-recipes-here.onrender.com/"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
