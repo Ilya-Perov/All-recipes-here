@@ -1,0 +1,9 @@
+.main {
+  min-height: 100vh;
+  padding: 2rem 5vw;
+}
+
+.content {
+  font-family: 'Days One', sans-serif;
+  background-color: #c2cad0;
+}

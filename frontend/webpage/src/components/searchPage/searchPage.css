@@ -1,0 +1,139 @@
+.content {
+  font-family: 'Days One', sans-serif;
+  background-color: #c2cad0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchPage {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  flex: 1;
+}
+
+.searchContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3vw;
+}
+
+.searchTitle {
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  margin-bottom: 1vh;
+  color: #000000;
+}
+
+.searchDescription {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: #000000;
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.searchForm {
+  margin-bottom: 2rem;
+}
+
+.searchInputContainer {
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchInput {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  font-size: 1rem;
+}
+
+.tagDropdown {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.tagDropdown:focus {
+  outline: none;
+  border-color: #bebebe;
+}
+
+.tagItem.selected {
+  background-color: #7e685a;
+  color: white;
+}
+
+.recipesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.recipesGrid .catalogueItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 700px;
+  max-width: 370px;
+}
+
+.recipesGridNoResult {
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  text-align: center;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .searchTitle {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+
+  .searchDescription {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+
+  .searchInputContainer {
+    width: 90%;
+  }
+
+  .recipesGrid {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recipesGrid {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .searchTitle {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .searchDescription {
+    font-size: 1.2rem;
+  }
+
+  .recipesGrid {
+    display: flex;
+    flex-direction: column;
+  }
+}

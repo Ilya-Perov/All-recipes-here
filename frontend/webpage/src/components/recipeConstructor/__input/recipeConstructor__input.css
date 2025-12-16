@@ -1,0 +1,82 @@
+.recipeInputBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 800px;
+  background-color: #c2cad0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recipeInputText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.4rem;
+}
+
+.recipeInputField {
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  border: 1.5px solid #c2b9b0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #7e685a;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.recipeInputField:focus {
+  border-color: lightseagreen;
+  box-shadow: 0 0 8px rgba(231, 113, 125, 0.3);
+  outline: none;
+}
+
+.recipeInputField.error {
+  border-color: #e53935;
+  background-color: #ffecec;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 850px) {
+  .recipeInputBody {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipeInputText {
+    font-size: 1rem;
+  }
+
+  .recipeInputField {
+    font-size: 0.95rem;
+  }
+
+  .recipeInputBody {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipeInputBody {
+    align-self: center;
+  }
+
+  .recipeInputField {
+    font-size: 0.9rem;
+  }
+
+  .recipeInputText {
+    font-size: 0.95rem;
+  }
+}

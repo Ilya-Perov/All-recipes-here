@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: my-postgres
+    environment:
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: db  
+      POSTGRES_USER: admin 
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - backend-net
+
+  frontend:
+    build:
+      context: ./frontend/webpage
+      dockerfile: Dockerfile
+    container_name: react-nginx
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  
+  api:
+    build:
+      context: ./backend/API
+    container_name: fastapi-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - backend-net
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json:ro
+    networks:
+      - backend-net
+      
+
+volumes:
+  pgdata:
+
+networks:
+  backend-net:
+    driver: bridge
+  frontend-net:
+    driver: bridge

@@ -1,0 +1,20 @@
+FROM node:16
+
+# Set working directory
+WORKDIR /app
+
+# Copy and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Build the React app
+RUN npm run build
+
+# Expose the port
+EXPOSE 3000
+
+# Serve the app using npx (avoids global install)
+CMD ["npx", "serve", "-s", "dist", "-l", "3000"]

@@ -1,0 +1,136 @@
+.content {
+  font-family: 'Days One', sans-serif;
+  background-color: #c2cad0;
+}
+
+.recipeConstructor {
+  font-family: 'Days One', sans-serif;
+  background-color: #c2cad0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 2rem;
+}
+
+.recipeConstructorTitle {
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  margin-top: 1rem;
+  text-align: center;
+  color: #000000;
+}
+
+.recipeConstructorHelp {
+  font-size: 1.8rem;
+  margin-bottom: 5vh;
+  color: #000000;
+  text-align: center;
+}
+
+.recipeConstructorBody {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto 2rem auto;
+  justify-content: space-between;
+  max-width: 90%;
+  padding: 0 2vw;
+}
+
+.recipeConstructorDivider {
+  margin: 1.5rem 0;
+  border-top: 1px solid #000000;
+}
+
+.recipePreviewWrapper {
+  width: 30%;
+}
+
+.formButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.formButton {
+  padding: 0.8rem 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  border-radius: 0.4rem;
+  text-align: center;
+}
+
+.formButton.save {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+.formButton.save:hover {
+  background-color: #b5b5b5;
+  transform: scale(1.05);
+}
+
+.formButton.reset {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+.formButton.reset:hover {
+  background-color: #b5b5b5;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .recipeConstructorBody {
+    flex-direction: column;
+    margin: 0 5vw;
+  }
+
+  .recipeConstructorTitle {
+    font-size: clamp(2rem, 3vw, 4rem);
+  }
+
+  .recipeConstructorHelp {
+    font-size: 1.5rem;
+  }
+
+  .formButtonContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .formButton {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .recipePreviewWrapper {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .recipeConstructorTitle {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .recipeConstructorHelp {
+    font-size: 1.2rem;
+  }
+
+  .recipeConstructorBody {
+    margin: 0 2vw;
+  }
+
+  .formButton {
+    font-size: 1.4rem;
+  }
+}

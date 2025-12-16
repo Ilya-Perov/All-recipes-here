@@ -1,0 +1,14 @@
+.tagsContainer {
+  border-radius: 1rem;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border: 0.15vw solid #e7717d;
+  display: flex;
+  width: fit-content;
+  background-color: #ffffff;
+  margin-right: 1vw;
+}
+
+.tagsContainer:last-of-type {
+  margin-right: 0;
+}
