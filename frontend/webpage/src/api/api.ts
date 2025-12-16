@@ -18,7 +18,7 @@ export const createRecipe = async (payload: any) => {
 
 export const fetchRecipes = async () => {
   try {
-    const response = await fetch('http://176.108.251.138:8000/recipes/');
+    const response = await fetch(API_URL);
     if (!response.ok) {
       throw new Error('Ошибка при загрузке рецептов');
     }
