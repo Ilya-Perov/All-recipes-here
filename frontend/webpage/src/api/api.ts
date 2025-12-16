@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL as string;
 
 export const createRecipe = async (payload: any) => {
   const response = await fetch(API_URL, {
